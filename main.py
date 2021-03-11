@@ -165,6 +165,8 @@ class Zlapp(Fudan):
         province = geo_api_info["addressComponent"].get("province", "")
         city = geo_api_info["addressComponent"].get("city", "")
         district = geo_api_info["addressComponent"].get("district", "")
+        if (city.strip() == ''):
+            city = province
         self.last_info.update(
                 {
                     "tw"      : "13",
